@@ -1,6 +1,7 @@
 module Api
   module V1
     class CoursesController < ApplicationController
+      protect_from_forgery with: :null_session # disable CSRF protection
       def index  # get all courses
         courses = Course.all
         render json: CourseSerializer.new(courses, options).serialized_json # render all courses
@@ -45,7 +46,7 @@ module Api
       private
 
       def course_params
-        params.require(:airline).permit(:name, :image_url)
+        params.require(:course).permit(:name, :image_url)
       end
 
       def options
