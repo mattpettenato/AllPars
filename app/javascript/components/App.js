@@ -8,10 +8,9 @@ import Course from "./Course/Course";
 class App extends Component {
   render() {
     return (
-      
         <Routes>
           <Route path="/" element={<Courses />} />
-          <Route path="/course/:slug" element={<Course />} />
+          <Route path="/courses/:slug" element={<Course />} />
         </Routes>
       
     );
