@@ -11,8 +11,8 @@ module Api
       
       # GET /api/v1/courses/:slug
       def show
-        # course = Course.find_by(slug: params[:slug])
-        render json: serializer(course, options)
+        course = Course.find_by(slug: params[:slug])
+        render json: CourseSerializer.new(courses).serialized_json
       end
 
       def create # create new course
