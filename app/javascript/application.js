@@ -3,8 +3,8 @@
 // import "controllers"
 
 // require("@rails/ujs").start()
-// require("turbolinks").start()
+
 // require("@rails/activestorage").start()
 // require("channels")
 
-console.log('hello world from app/javascript/application.js')
+// console.log('hello world from app/javascript/application.js')

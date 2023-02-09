@@ -1,7 +1,7 @@
 module Api
   module V1
     class CoursesController < ApplicationController
-      protect_from_forgery with: :null_session # disable CSRF protection
+      # protect_from_forgery with: :null_session # disable CSRF protection
 
       def index # GET /api/v1/airlines
         courses = Course.all
