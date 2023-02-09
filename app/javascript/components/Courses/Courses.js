@@ -21,8 +21,16 @@ const Courses = () => {
 
   return (
     <Fragment>
-      <div>This is the Courses#index view</div>
-      <ul>{list}</ul>
+      {/* <div>This is the Courses#index view</div> */}
+      <div className="home">
+        <div className="header">
+          <h1>AllPars</h1>
+          <p className="subheader">Looking for the best golf? We got you covered.</p>
+        </div>
+        <div className="grid">
+          <ul>{list}</ul>
+        </div>
+      </div>
     </Fragment>
   );
 }
