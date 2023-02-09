@@ -2,23 +2,16 @@ module Api
   module V1
     class CoursesController < ApplicationController
       protect_from_forgery with: :null_session # disable CSRF protection
-      # def index  # get all courses
-      #   courses = Course.all
-      #   render json: CourseSerializer.new(courses, options).serialized_json # render all courses
-      # end
 
-      # def show # get course by slug
-      #   course = Course.find_by(slug: params[:slug])
-
-      #   render json: CourseSerializer.new(course, options).serialized_json # render course
-      # end
-
-      def index
-        render json: serializer(courses, options)
+      def index # GET /api/v1/airlines
+        courses = Course.all
+        # render json: serializer(courses, options)
+        render json: CourseSerializer.new(courses).serialized_json
       end
       
       # GET /api/v1/courses/:slug
       def show
+        # course = Course.find_by(slug: params[:slug])
         render json: serializer(course, options)
       end
 
@@ -53,6 +46,10 @@ module Api
       end
 
       private
+
+      def courses
+        @courses ||= Course.includes(reviews: :user).all
+      end
 
       def course_params
         params.require(:course).permit(:name, :image_url)
