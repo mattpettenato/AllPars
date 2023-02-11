@@ -15,7 +15,9 @@ const Course = ({ name, image_url, slug, ...props}) => {
         <img src={image_url} alt={name} width='50%'/>
 
       </div>
-
+      <div>
+        <h3>{name}</h3>
+      </div>
       <div className="course-name">
         {name}
       </div>
