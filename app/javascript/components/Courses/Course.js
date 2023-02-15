@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 
 
-// const Course = (props) => {
-//   const {name, image_url, slug} = props.attributes
+const Course = (props) => {
+  const {name, image_url, slug} = props.attributes
 
 const Course = ({ name, image_url, slug, ...props}) => {
 
